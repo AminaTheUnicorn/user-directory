@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import API from "../../utils/API";
 import Container from "../Container";
 
 
@@ -67,8 +66,7 @@ class SearchResults extends Component {
  
     return (
       <Container>
-    
-<table class="table table-striped">
+    <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Image</th>
@@ -90,6 +88,7 @@ class SearchResults extends Component {
   </tbody>
 </table>
      
+
      
       </Container>
 
