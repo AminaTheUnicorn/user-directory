@@ -2,14 +2,14 @@ import React from "react";
 import Container from "./components/Container";
 import Header from "./components/Header/Header";
 import SearchResults from "./components/SearchResults/SearchResults";
-import SubmitForm from "./components/SubmitForm/SubmitForm";
+import SearchForm from "./components/SearchForm/SearchForm";
 
 
 function App(){
     return (
         <Container>
             <Header></Header>
-            <SubmitForm></SubmitForm>
+            <SearchForm></SearchForm>
             <SearchResults></SearchResults>
         </Container>
     );
