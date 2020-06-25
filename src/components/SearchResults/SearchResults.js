@@ -1,53 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
+import SearchForm from "../SearchForm/SearchForm";
+// import API from "../../utils/API";
 import Container from "../Container";
 
 
 class SearchResults extends Component {
-  // state = {
-  //   result: {},
-  //   search: ""
-  //   // search: "",
-  //   // name: [],
-  //   // results: [],
-  //   // error: ""
-  // };
-
-  // componentDidMount() {
-    
-  //  this.getEmployee() 
-  // }
-
-  // getEmployee = query=> {
-  //   API.getUsers(query)
-  //     .then(res => this.setState({ result: res.data }))
-  //     .catch(err => console.log(err));
-     
-  // }
-
-  
-
-  // // searchEmployee = query => {
-  // //   API.getUsers
-  // //     .then(res => this.setState({ result: res.data }))
-  // //     .catch(err => console.log(err));
-  // // };
-
-  // handleInputChange = event => {
-  //   const value = event.target.value;
-  //   const name = event.target.name;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   this.searchMovies(this.state.search);
-  // };
+ 
 
   state = {
     results: {},
+    name: [],
     persons: [],
     search: "",
     loading: true
@@ -61,11 +24,33 @@ class SearchResults extends Component {
  })
   }
   
+  
+  // handleInputChange = event => {
+  //   this.setState({ search: event.target.value });
+  // };
+
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   API.getUsers(this.state.search)
+  //     .then(res => {
+  //       if (res.data.status === "error") {
+  //         throw new Error(res.data.message);
+  //       }
+  //       this.setState({ results: res.data.message, error: "" });
+  //     })
+  //     .catch(err => this.setState({ error: err.message }));
+  // };
 
   render() {
  
     return (
       <Container>
+        <SearchForm>
+        handleFormSubmit={this.handleFormSubmit}
+            handleInputChange={this.handleInputChange}
+            name={this.state.name}
+        </SearchForm>
+    
     <table class="table table-striped">
   <thead>
     <tr>
