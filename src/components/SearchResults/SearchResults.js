@@ -6,35 +6,31 @@ import Container from "../Container";
 
 class SearchResults extends Component {
   state = {
-    results: {},
+    // results: {},
     name: [],
-    persons: [],
+    results: [],
+    filterResults: [],
     search: "",
-    loading: true,
+  
   };
 
   componentDidMount() {
     axios.get("https://randomuser.me/api/?results=200&nat=us").then((res) => {
       console.log(res.data.results);
-      this.setState({ persons: res.data.results });
+      this.setState({
+         results: res.data.results,
+         filteredResults: res.data.results,
+         });
     });
   }
 
-  handleInputChange = event => {
-    this.setState({ search: event.target.value });
-  };
+  // handleInputChange = (event) => {
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   API.getUsers(this.state.search)
-  //     .then(res => {
-  //       if (res.data.status === "error") {
-  //         throw new Error(res.data.message);
-  //       }
-  //       this.setState({ results: res.data.message, error: "" });
-  //     })
-  //     .catch(err => this.setState({ error: err.message }));
+  //   results.name.first.includes(event.target.value)
+ 
+  //   this.setState({ search: event.target.value, filteredResults: filtering });
   // };
+
 
   render() {
     return (
@@ -51,7 +47,7 @@ class SearchResults extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.persons.map((person) => (
+            {this.state.results.map((person) => (
               <tr>
                 <td> 
                   <img key={person.id.value} src={person.picture.thumbnail} alt=" random person" />
