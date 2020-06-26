@@ -36,7 +36,7 @@ class Search extends Component {
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Search By Name:</h1>
+      
          
           <SearchForm
             handleInputChange={this.handleInputChange}
