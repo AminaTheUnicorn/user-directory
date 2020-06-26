@@ -20,9 +20,9 @@ class SearchResults extends Component {
     });
   }
 
-  // handleInputChange = event => {
-  //   this.setState({ search: event.target.value });
-  // };
+  handleInputChange = event => {
+    this.setState({ search: event.target.value });
+  };
 
   // handleFormSubmit = event => {
   //   event.preventDefault();
@@ -39,11 +39,6 @@ class SearchResults extends Component {
   render() {
     return (
       <Container>
-        <SearchForm>
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          name={this.state.name}
-        </SearchForm>
 
         <table class="table table-striped">
           <thead>
@@ -59,13 +54,13 @@ class SearchResults extends Component {
             {this.state.persons.map((person) => (
               <tr>
                 <td> 
-                  <img key={person.id.value} src={person.picture.thumbnail} />
+                  <img key={person.id.value} src={person.picture.thumbnail} alt=" random person" />
                 </td>
 
-                <td> {person.name.first}</td>
-                <td> {person.cell}</td>
-                <td> {person.email}</td>
-                <td> {person.dob.date}</td>
+                <td key={person.id.value} > {person.name.first}</td>
+                <td key={person.id.value} > {person.cell}</td>
+                <td key={person.id.value} > {person.email}</td>
+                <td key={person.id.value} > {person.dob.date}</td>
               </tr>
             ))}
           </tbody>
