@@ -1,7 +1,7 @@
 import React from "react";
 // import SearchResults from "../SearchResults/SearchResults";
 
-function SearchForm() {
+function SearchForm(props) {
   return (
     <form>
       <div class="form-group">
@@ -11,8 +11,8 @@ function SearchForm() {
           type="userSearch"
           class="form-control"
           id="userSearch"
-          // onChange={props.handleInputChange}
-          // value={props.value}
+          onChange={props.handleInputChange}
+          value={props.keyword}
           aria-describedby="userSearch"
           placeholder="Search" />
       

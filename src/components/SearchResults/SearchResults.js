@@ -1,38 +1,11 @@
-import React, { Component } from "react";
-import axios from "axios";
-import SearchForm from "../SearchForm/SearchForm";
-// import API from "../../utils/API";
+import React from "react";
+
+// import SearchForm from "../SearchForm/SearchForm";
+
 import Container from "../Container";
 
-class SearchResults extends Component {
-  state = {
-    // results: {},
-    name: [],
-    results: [],
-    filterResults: [],
-    search: "",
-  
-  };
+function SearchResults(props)  {
 
-  componentDidMount() {
-    axios.get("https://randomuser.me/api/?results=200&nat=us").then((res) => {
-      console.log(res.data.results);
-      this.setState({
-         results: res.data.results,
-         filteredResults: res.data.results,
-         });
-    });
-  }
-
-  // handleInputChange = (event) => {
-
-  //   results.name.first.includes(event.target.value)
- 
-  //   this.setState({ search: event.target.value, filteredResults: filtering });
-  // };
-
-
-  render() {
     return (
       <Container>
 
@@ -47,16 +20,16 @@ class SearchResults extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.results.map((person) => (
+            {props.results.map((person) => (
               <tr>
                 <td> 
                   <img key={person.id.value} src={person.picture.thumbnail} alt=" random person" />
                 </td>
 
-                <td key={person.id.value} > {person.name.first}</td>
-                <td key={person.id.value} > {person.cell}</td>
-                <td key={person.id.value} > {person.email}</td>
-                <td key={person.id.value} > {person.dob.date}</td>
+                <td> {person.name.first}</td>
+                <td> {person.cell}</td>
+                <td> {person.email}</td>
+                <td> {person.dob.date}</td>
               </tr>
             ))}
           </tbody>
@@ -64,6 +37,6 @@ class SearchResults extends Component {
       </Container>
     );
   }
-}
+
 
 export default SearchResults;
