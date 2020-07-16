@@ -21,4 +21,4 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 ## View Site
 https://aminatheunicorn.github.io/user-directory/
 
-[User Directory Demo](./assets/employee-directory.PNG)
+![User Directory Demo](./assets/employee-directory.PNG)
