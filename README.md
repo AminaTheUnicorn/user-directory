@@ -18,5 +18,6 @@ An employee or manager would benefit greatly from being able to view non-sensiti
 - Login to secure user information
 - Update employee information
 
-## View Site 
-[User Directory Demo](react-app.gif)
+## View Site
+https://aminatheunicorn.github.io/user-directory/
+[User Directory Demo](assets/employee-directory.PNG)
